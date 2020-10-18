@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title%} Detail {% endblock %}
+{% block content %}
+
+
+<br><br><br>
+
+
+
+    <div class="panel-body">
+    <div class="up">
+    <p style="font-size:30px;color:grey;"> {{mem.title}} </p>
+    <p style="color:white;"> {{mem.created_on}} </p>
+    <p style="color:white;"> {{mem.tags}} </p>
+    </div>
+    <img src="/media/{{mem.pic}}" class="center"  >
+    </div><br><br>
+
+
+    {% for com in mem.comments.all %}
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-8">
+
+                        <div class="card card-white post">
+                            <div class="post-heading">
+                                <div class="float-left image">
+                                    <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                                </div>
+                                <div class="float-left meta">
+                                    <div class="title h5">
+                                        <a href="#"><b>{{ com.author }}</b></a>
+                                        made a post.
+                                    </div>
+                                    <h6 class="text-muted time">{{ com.created_on }}</h6>
+                                </div>
+                            </div>
+                            <div class="post-description">
+                                <p>{{ com.text }}</p>
+
+                            </div>
+                        </div>
+
+                </div>
+
+            </div>
+        </div>
+
+{% endfor %}
+
+
+{% endblock %}

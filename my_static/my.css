@@ -1,0 +1,23 @@
+body {
+  background-image: url("cat33.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.panel-body {
+  width: 800px;
+  margin: auto;
+  border: 3px solid #737373;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 80%)
+}
+
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+

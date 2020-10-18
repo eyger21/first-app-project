@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title%} Jbzdy.pl {% endblock %}
+
+
+{% block content %}
+
+
+    <div class="panel-heading"> Memes: {{memes|length}}</div>
+
+
+    {% for mem in object_list %}
+            <div class="panel-body">
+                <div class="up">
+                <a href="{% url 'detail' mem.id %}">
+                    <p style="font-size:30px;color:grey;"> {{mem.title}} </p> </a>
+                <p style="color:white;"> {{mem.created_on}} </p>
+                <p style="color:white;"> {{mem.tags}} </p>
+                </div>
+                <img src="/media/{{mem.pic}}" class="center"  >
+                <br><br><br><br>
+            </div>
+    <br><br><br><br><br>
+
+
+    {% endfor %}
+
+{% endblock %}
